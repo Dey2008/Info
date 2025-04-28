@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body style="background-image: url(Di.png); background-size:cover ;">
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-circle"></div>
+
+    <nav class="navbar">
+        <div class="left">
+            <img src="BIL.png" alt="Logo" class="logo">
+        </div>
+    
+        <div class="center">
+            <ul class="menu">
+                <li><a href="#" onclick="openModal()">Email Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="Informatics.html" class="circle-link">Home</a></li>
+                <li><a href="Dias.html">Dias</a></li>
+                <li><a href="Narlan.html">Narlan</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <hr class="mt-4 border-gray-700">
+
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+        <img src="Dias.png" style="float: left;" height="300" width="200" >
+        <p style="margin: 0 40px; text-align: center; font-size: 40px; color: rgb(203, 218, 0);" class="dissa-txt">
+            My name is Dias. I was born on December 3, 2008. I study at KTL, where I am passionate about music and technology. I enjoy playing musical instruments, especially the guitar and piano, as they allow me to express my creativity. I am planning to become a programmer because I am fascinated by how technology can solve real-world problems. Currently, I am preparing for important exams like IELTS, NUET, and UBT to achieve my goal of entering Nazarbayev University. In my free time, I love exploring new skills and working hard toward my dreams, always believing that dedication and passion will lead me to success.
+        </p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <h2 style="color: red;">🎵 My Favorite Songs 🎵</h2>
+          <div style="display: flex; justify-content: center; gap: 30px; margin-top: 20px;">
+            <audio controls style="margin-bottom: 20px;">
+              <source src="Laufey-Dreamer.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          
+            <audio controls style="margin-bottom: 20px;">
+              <source src="Laufey-I_Wish_You_Love.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+            <div style="margin-top: 30px;">
+              <a href="https://www.notion.so/1d0f43310920808abaf9fd19c5d38c33?pvs=4" target="_blank" style="font-size: 20px; text-decoration: none; color: rgb(255, 166, 0);">
+                📄 View My Certificates and Diplomas
+              </a>
+            </div>
+          </div>
+
+    <div id="emailModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2>Send Us a Message</h2>
+          <form id="contact-form">
+              <div class="toggle-select">
+                  <input type="radio" id="dias" name="recipient" value="Dias" required>
+                  <label for="dias">Dias</label>
+                
+                  <input type="radio" id="narlan" name="recipient" value="Narlan">
+                  <label for="narlan">Narlan</label>
+                </div><br>
+            <input type="text" name="user_name" placeholder="Your Name" required><br>
+            <input type="text" name="user_email" placeholder="Your Email" required><br>
+            <textarea name="message" placeholder="Your Message" required></textarea><br>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    
+      <!-- SCRIPT -->
+      <script>
+        // EmailJS init
+        emailjs.init("LC7sCQ5Xe9Mbn5dRR"); // 🧠 Replace with your public key
+    
+        // Handle form submit
+        document.getElementById("contact-form").addEventListener("submit", function (e) {
+          e.preventDefault();
+          emailjs.sendForm("service_m1wurhw", "template_y5qfbcl", this)
+            .then(() => {
+              alert("Message sent!");
+              closeModal();
+            }, (err) => {
+              alert("Failed to send. Try again.");
+              console.error(err);
+            });
+        });
+    
+        // Modal logic
+        function openModal() {
+          const modal = document.getElementById("emailModal");
+          modal.style.display = "flex";
+          setTimeout(() => modal.classList.add("show"), 10);
+        }
+    
+        function closeModal() {
+          const modal = document.getElementById("emailModal");
+          modal.classList.remove("show");
+          setTimeout(() => modal.style.display = "none", 300);
+        }
+    
+        window.onclick = function (event) {
+          const modal = document.getElementById("emailModal");
+          if (event.target === modal) {
+            closeModal();
+          }
+        }
+      </script>
+    
+    <section id="contact" style="background-color: #302f97; padding: 15px 0; margin-top: 100px;">
+        <h2 style="text-align: center; color: black; margin-bottom: 30px;">Contact Us</h2>
+        <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap;">
+    
+            <!-- Dias Socials -->
+            <div class="card-3d" style="background: rgb(4, 146, 182); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); width: 250px; text-align: left;">
+                <h3 style="text-align: center; color: black;">Dias</h3>
+                <p><i class="fab fa-instagram" style="margin-right: 10px;"></i><a href="https://instagram.com/e.dias0" target="_blank">Instagram</a></p>
+                <p><i class="fab fa-tiktok" style="margin-right: 10px;"></i><a href="https://tiktok.com/@erik_dias0" target="_blank">TikTok</a></p>
+                <p><i class="fab fa-telegram" style="margin-right: 10px;"></i><a href="https://t.me/B3_G00D" target="_blank">Telegram</a></p>
+                <p><i class="fas fa-envelope" style="margin-right: 10px;"></i><a href="https://mail.google.com/mail/?view=cm&to=erikd6490@gmail.com" target="_blank">Gmail</a></p>
+            </div>
+    
+    
+            <div class="card-3d"  style="background: rgb(4, 146, 182); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); width: 250px; text-align: left;">
+                <h3 style="text-align: center; color: black;">Bilim-Innovation Lyceum</h3>
+                <p><i class="fas fa-globe" style="margin-right: 10px;"></i><a href="https://bil.edu.kz" target="_blank">Website</a></p>
+                <p><i class="fas fa-phone" style="margin-right: 10px;"></i>+7 (727) 345-67-89</p>
+                <p><i class="fas fa-envelope" style="margin-right: 10px;"></i><a href="mailto:info@bil.edu.kz">info@bil.edu.kz</a></p>
+                <p><i class="fab fa-instagram" style="margin-right: 10px;"></i><a href="https://instagram.com/bil.lyceum" target="_blank">Instagram</a></p>
+            </div>
+            <!-- Narlan Socials -->
+            <div  class="card-3d" style="background: rgb(4, 146, 182); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); width: 250px; text-align: left;">
+                <h3 style="text-align: center; color: black;">Narlan</h3>
+                <p><i class="fab fa-instagram" style="margin-right: 10px;"></i><a href="https://instagram.com/dammn.na" target="_blank">Instagram</a></p>
+                <p><i class="fab fa-tiktok" style="margin-right: 10px;"></i><a href="https://tiktok.com/@mojnanareke" target="_blank">TikTok</a></p>
+                <p><i class="fab fa-telegram" style="margin-right: 10px;"></i><a href="https://t.me/TursynkanovDZN" target="_blank">Telegram</a></p>
+                <p><i class="fas fa-envelope" style="margin-right: 10px;"></i><a href="https://mail.google.com/mail/?view=cm&to=ntursynkanov69@gmail.com" target="_blank">Gmail</a></p>
+            </div>
+    
+        </div>
+    </section>
+
+    <script>
+        const dot = document.querySelector('.cursor-dot');
+        const circle = document.querySelector('.cursor-circle');
+        
+        let mouseX = 0, mouseY = 0;
+        let circleX = 0, circleY = 0;
+        
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        
+            dot.style.top = `${mouseY}px`;
+            dot.style.left = `${mouseX}px`;
+        });
+        
+        // Smooth circle following
+        function animate() {
+            circleX += (mouseX - circleX) * 0.1;
+            circleY += (mouseY - circleY) * 0.1;
+        
+            circle.style.top = `${circleY}px`;
+            circle.style.left = `${circleX}px`;
+        
+            requestAnimationFrame(animate);
+        }
+        
+        animate();
+        
+        // --- Grow circle on hover elements ---
+        const hoverElements = document.querySelectorAll('a, button, .card');
+        
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                circle.style.width = '60px';
+                circle.style.height = '60px';
+            });
+        
+            el.addEventListener('mouseleave', () => {
+                circle.style.width = '30px';
+                circle.style.height = '30px';
+            });
+        });
+        </script>
+
+</body>
+
+</html>

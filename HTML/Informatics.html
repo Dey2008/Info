@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+  <title>Dias & Narlan</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+
+<body style="background-image: url(3.png); background-size: cover;">
+    <div class="cursor-dot"></div>
+    <div class="cursor-circle"></div>
+  <nav class="navbar">
+    <div class="left">
+      <img src="BIL.png" alt="Logo" class="logo">
+    </div>
+
+    <div class="center">
+      <ul class="menu">
+        <li><a href="#" onclick="openModal()">Email Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="Informatics.html" class="circle-link">Home</a></li>
+        <li><a href="Dias.html">Dias</a></li>
+        <li><a href="Narlan.html">Narlan</a></li>
+      </ul>
+    </div>
+  </nav>
+  <hr class="mt-4 border-gray-700">
+
+  <div style="display: flex; align-items: center; justify-content: space-between;">
+    <a href="Dias.html">
+      <img src="Dias.png" style="float: left;" height="400" width="275" alt="Dias" title="Here about Dias!">
+    </a>
+    <p style="margin: 0 20px; text-align: center; font-size: 30px; color: chartreuse;" class="custom-text">
+        Hi! We’re two friends in the 10th grade at Bilim Innovation Lyceum. We’re passionate about learning new things and creating cool projects together. When we’re not studying, you’ll probably find us on the football field or listening to our favorite music. This website is our way of exploring the digital world and sharing a bit of who we are. Thanks for stopping by!
+    </p>
+    <a href="Narlan.html">
+      <img src="Narlan.png" style="float: right;" height="400" width="275" alt="Narlan" title="Here about Narlan!">
+    </a>
+  </div>
+
+  <div style="display: flex; justify-content: space-around; margin-top: 50px;">
+
+    <!-- Dias's Card -->
+    <div class="card" onmousemove="rotateCard(event, this)" onmouseleave="resetCard(this)" style="background-color: rgb(37, 85, 141); border-radius: 15px; padding: 20px; width: 40%; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        <h2 style="color: rgb(127, 255, 0); text-align: center;">Dias</h2>
+        <ul style="list-style-type: none; padding: 0; font-size: 18px; color: rgb(255, 255, 255);">
+            <li><strong>Hobby:</strong> Guitar, Coding</li>
+            <li><strong>Dream:</strong> To have a lot of various musical instruments</li>
+            <li><strong>Future Job:</strong> Computer Science</li>
+        </ul>
+    </div>
+
+    
+    <!-- Narlan's Card -->
+    <div class="card" onmousemove="rotateCard(event, this)" onmouseleave="resetCard(this)" style="background-color: rgb(37, 85, 141); border-radius: 15px; padding: 20px; width: 40%; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        <h2 style="color: rgb(127, 255, 0); text-align: center;">Narlan</h2>
+        <ul style="list-style-type: none; padding: 0; font-size: 18px; color: white;">
+            <li><strong>Hobby:</strong> Football, Collection</li>
+            <li><strong>Dream:</strong> Get in MUA(Medical University of Astana)</li>
+            <li><strong>Future Job:</strong> Teacher or Doctor</li>
+        </ul>
+    </div>
+
+</div>
+
+  <!-- MODAL -->
+  <div id="emailModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Send Us a Message</h2>
+      <form id="contact-form">
+          <div class="toggle-select">
+              <input type="radio" id="dias" name="recipient" value="Dias" required>
+              <label for="dias">Dias</label>
+            
+              <input type="radio" id="narlan" name="recipient" value="Narlan">
+              <label for="narlan">Narlan</label>
+            </div><br>
+        <input type="text" name="user_name" placeholder="Your Name" required><br>
+        <input type="text" name="user_email" placeholder="Your Email" required><br>
+        <textarea name="message" placeholder="Your Message" required></textarea><br>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    // EmailJS init
+    emailjs.init("LC7sCQ5Xe9Mbn5dRR"); // 🧠 Replace with your public key
+
+    // Handle form submit
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      emailjs.sendForm("service_m1wurhw", "template_y5qfbcl", this)
+        .then(() => {
+          alert("Message sent!");
+          closeModal();
+        }, (err) => {
+          alert("Failed to send. Try again.");
+          console.error(err);
+        });
+    });
+
+    // Modal logic
+    function openModal() {
+      const modal = document.getElementById("emailModal");
+      modal.style.display = "flex";
+      setTimeout(() => modal.classList.add("show"), 10);
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("emailModal");
+      modal.classList.remove("show");
+      setTimeout(() => modal.style.display = "none", 300);
+    }
+
+    window.onclick = function (event) {
+      const modal = document.getElementById("emailModal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+  </script>
+
+<section id="contact" style="background-color: #302f97; padding: 15px 0; margin-top: 100px;">
+    <h2 style="text-align: center; color: black; margin-bottom: 30px;">Contact Us</h2>
+    <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap;">
+
+        <!-- Dias Socials -->
+        <div class="card-3d" style="background: rgb(4, 146, 182); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); width: 250px; text-align: left;">
+            <h3 style="text-align: center; color: black;">Dias</h3>
+            <p><i class="fab fa-instagram" style="margin-right: 10px;"></i><a href="https://instagram.com/e.dias0" target="_blank">Instagram</a></p>
+            <p><i class="fab fa-tiktok" style="margin-right: 10px;"></i><a href="https://tiktok.com/@erik_dias0" target="_blank">TikTok</a></p>
+            <p><i class="fab fa-telegram" style="margin-right: 10px;"></i><a href="https://t.me/B3_G00D" target="_blank">Telegram</a></p>
+            <p><i class="fas fa-envelope" style="margin-right: 10px;"></i><a href="https://mail.google.com/mail/?view=cm&to=erikd6490@gmail.com" target="_blank">Gmail</a></p>
+        </div>
+
+
+        <div class="card-3d"  style="background: rgb(4, 146, 182); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); width: 250px; text-align: left;">
+            <h3 style="text-align: center; color: black;">Bilim-Innovation Lyceum</h3>
+            <p><i class="fas fa-globe" style="margin-right: 10px;"></i><a href="https://bil.edu.kz" target="_blank">Website</a></p>
+            <p><i class="fas fa-phone" style="margin-right: 10px;"></i>+7 (727) 345-67-89</p>
+            <p><i class="fas fa-envelope" style="margin-right: 10px;"></i><a href="mailto:info@bil.edu.kz">info@bil.edu.kz</a></p>
+            <p><i class="fab fa-instagram" style="margin-right: 10px;"></i><a href="https://instagram.com/bil.lyceum" target="_blank">Instagram</a></p>
+        </div>
+        <!-- Narlan Socials -->
+        <div  class="card-3d" style="background: rgb(4, 146, 182); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); width: 250px; text-align: left;">
+            <h3 style="text-align: center; color: black;">Narlan</h3>
+            <p><i class="fab fa-instagram" style="margin-right: 10px;"></i><a href="https://instagram.com/dammn.na" target="_blank">Instagram</a></p>
+            <p><i class="fab fa-tiktok" style="margin-right: 10px;"></i><a href="https://tiktok.com/@mojnanareke" target="_blank">TikTok</a></p>
+            <p><i class="fab fa-telegram" style="margin-right: 10px;"></i><a href="https://t.me/TursynkanovDZN" target="_blank">Telegram</a></p>
+            <p><i class="fas fa-envelope" style="margin-right: 10px;"></i><a href="https://mail.google.com/mail/?view=cm&to=ntursynkanov69@gmail.com" target="_blank">Gmail</a></p>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+    
+            const rotateX = -((y - centerY) / centerY) * 10;
+            const rotateY = ((x - centerX) / centerX) * 10;
+    
+            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+    
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        });
+    });
+    </script>
+
+<script>
+    const dot = document.querySelector('.cursor-dot');
+    const circle = document.querySelector('.cursor-circle');
+    
+    let mouseX = 0, mouseY = 0;
+    let circleX = 0, circleY = 0;
+    
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    
+        dot.style.top = `${mouseY}px`;
+        dot.style.left = `${mouseX}px`;
+    });
+    
+    // Smooth circle following
+    function animate() {
+        circleX += (mouseX - circleX) * 0.1;
+        circleY += (mouseY - circleY) * 0.1;
+    
+        circle.style.top = `${circleY}px`;
+        circle.style.left = `${circleX}px`;
+    
+        requestAnimationFrame(animate);
+    }
+    
+    animate();
+    
+    // --- Grow circle on hover elements ---
+    const hoverElements = document.querySelectorAll('a, button, .card');
+    
+    hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            circle.style.width = '60px';
+            circle.style.height = '60px';
+        });
+    
+        el.addEventListener('mouseleave', () => {
+            circle.style.width = '30px';
+            circle.style.height = '30px';
+        });
+    });
+    </script>
+
+</body>
+</html>
